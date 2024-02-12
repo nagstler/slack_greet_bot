@@ -33,6 +33,11 @@ class SlackEventsController < ApplicationController
   
     def greet_user(user)
         client = Slack::Web::Client.new
+        if GREETING_MESSAGE_TEMPLATE.nil?
+          message = "Welcome to the workspace, #{user['name']}!"
+        else
+          message = GREETING_MESSAGE_TEMPLATE.gsub('{{name}}', user['name'])
+        end
       
         # Lua script for atomic check-and-set
         lua_script = <<-LUA
@@ -55,7 +60,6 @@ class SlackEventsController < ApplicationController
         if greeted == 1
           # The user has not been greeted; proceed with greeting.
           conversation = client.conversations_open(users: user['id'])
-          message = "Welcome to the workspace, #{user['name']}!"
           client.chat_postMessage(
             channel: conversation.channel.id,
             text: message,
