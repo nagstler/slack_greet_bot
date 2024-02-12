@@ -63,7 +63,9 @@ class SlackEventsController < ApplicationController
           client.chat_postMessage(
             channel: conversation.channel.id,
             text: message,
-            blocks: [{type: 'section', text: {type: 'mrkdwn', text: message}}]
+            blocks: [{type: 'section', text: {type: 'mrkdwn', text: message}}],
+            unfurl_links: false,
+            unfurl_media: false
           )
         else
           # The user has already been greeted; skip sending the message.
