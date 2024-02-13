@@ -26,7 +26,7 @@ class SlackEventsController < ApplicationController
   
     def process_event(event)
       case event[:type]
-      when 'user_profile_changed'
+      when 'team_join'
         greet_user(event[:user])
       end
     end
