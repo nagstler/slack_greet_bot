@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
-  post '/slack_events', to: 'slack_events#create'
+  root "rails/health#show"
   
+  post '/slack_events', to: 'slack_events#create'
   post '/test_team_join', to: 'slack_events#test_team_join'
 end
