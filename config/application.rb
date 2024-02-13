@@ -36,7 +36,7 @@ module SlackGreetBot
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    config.secret_key_base = 8a7e767d11ae4a74f2fac0548cacc9680054f0fe3df27f8bc193698f9e96ba685505b3f4f05c64fed75229cc3c7b4c7646abff5145b8349f8b5a670db3cd7bc3
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
