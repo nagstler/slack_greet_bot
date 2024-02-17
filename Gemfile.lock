@@ -99,6 +99,10 @@ GEM
       multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
+    github_webhook (1.4.2)
+      activesupport (>= 4)
+      rack (>= 1.3)
+      railties (>= 4)
     gli (2.21.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -228,6 +232,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  github_webhook (~> 1.4)
   puma (>= 5.0)
   rails (~> 7.1.3)
   redis

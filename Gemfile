@@ -15,6 +15,7 @@ gem "puma", ">= 5.0"
 # gem "redis", ">= 4.0.1"
 gem 'slack-ruby-client'
 gem 'redis'
+gem 'github_webhook', '~> 1.4'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
